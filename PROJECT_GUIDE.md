@@ -73,6 +73,12 @@ During development, `vite.config.js` proxies requests beginning with `/api` to t
 
 For production, `npm run build` places the compiled frontend in `dist/`. With `NODE_ENV=production`, Express serves those files alongside the API.
 
+## Vercel frontend deployment
+
+The repository includes `vercel.json` for the Vite build. Import the GitHub repository into Vercel and set the `VITE_API_URL` environment variable to the origin of a publicly deployed Express backend. The frontend appends `/api` to that value. Keep it empty for local development, where Vite proxies `/api` to `localhost:5000`.
+
+The Vercel-hosted frontend cannot reach a backend or MongoDB server bound to `localhost` on a developer's computer. For a live full-stack deployment, host the backend and use a cloud-reachable MongoDB service, then set the backend's `CLIENT_ORIGIN` to the Vercel deployment origin.
+
 ## Local development commands
 
 Run both frontend and backend from the project root:

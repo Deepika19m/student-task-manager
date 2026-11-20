@@ -59,6 +59,12 @@ npm run build
 
 Set `NODE_ENV=production` and the required MongoDB/JWT environment variables, then run `npm start`. Express serves the built React app and API from the same origin.
 
+## Deploy the frontend to Vercel
+
+Import this repository in Vercel. The included `vercel.json` sets the Vite build command and `dist` output directory. Set the `VITE_API_URL` environment variable to the public **origin** of the deployed Express API (for example, `https://campuscare-api.example.com`, without `/api`), then redeploy.
+
+The frontend uses `/api` through the Vite proxy during local development. In production, it uses `${VITE_API_URL}/api`. A Vercel frontend cannot access an Express server or MongoDB running only on your computer; deploy the backend separately and use a publicly reachable MongoDB service such as MongoDB Atlas. Configure the backend's `CLIENT_ORIGIN` to allow the Vercel site URL.
+
 ## API overview
 
 All complaint routes except sign-in/registration require a bearer token. Admin-only actions are role protected.

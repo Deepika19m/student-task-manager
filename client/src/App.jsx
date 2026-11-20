@@ -7,7 +7,8 @@ import {
   Plus, Search, ShieldCheck, Sparkles, Trash2, TrendingUp, Users, X,
 } from "lucide-react";
 
-const API = "/api";
+const API_ORIGIN = (import.meta.env.VITE_API_URL || "").replace(/\/+$/, "");
+const API = `${API_ORIGIN}/api`;
 const CATEGORIES = ["Facilities", "Academics", "Technology", "Campus Safety", "Transportation", "Student Services"];
 const DEPARTMENTS = ["Computer Science", "Business", "Engineering", "Arts & Humanities", "Health Sciences", "Student Affairs", "Other"];
 const STATUSES = ["Pending", "In Progress", "Resolved"];
