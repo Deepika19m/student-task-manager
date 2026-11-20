@@ -2,6 +2,8 @@
 
 A full-stack complaint management app with separate student and administrator portals. The React interface talks to an Express API backed by MongoDB; complaint records are stored in MongoDB, and passwords are hashed before storage.
 
+For an explanation of the technologies and frontend/backend/database connection flow, see the [Project Guide](./PROJECT_GUIDE.md).
+
 ## Features
 
 - **Student portal:** register and sign in, submit complaints, receive a unique complaint ID, search and track complaint status, and view personal complaint history.
